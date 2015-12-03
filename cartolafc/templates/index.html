@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CartolaFC - Te amo Angelim</title>
+	<link rel="icon" href="{% static "img/teamoangelim_ico.png" %}">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600">
+    <link rel="stylesheet" href="{% static "css/reset.css" %}">
+    <link rel="stylesheet" href="{% static "css/estilo.css" %}">
+    <link rel="stylesheet" href="{% static "css/bio.css" %}">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68415947-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+</head>
+<body>
+    <main>
+        <h1>Te Amo Angelim</h1>
+    {{ erro }}
+    
+    {% for time in liga %}
+        <div class="time">
+        <img src='{{ time.escudo_grande }}'><br>
+        <h2>{{ time.nome }}</h2>
+        <h3>Cartola: {{ time.nome_cartola }}</h3>
+        <h3>Patrimônio: C${{ time.patrimonio }}</h3>
+        <h3>Pontuação: {{ time.pontuacao }}</h3>
+        {% for atleta in time.lista_atletas %}
+            <ul>
+            <li><img src='{{ atleta.escudo }}'>
+            {{ atleta.posicao }}
+            {{ atleta.nome }}
+            {{ atleta.pontuacao }}</li>
+            </ul>
+        {% endfor %}
+        </div>
+    {% endfor %}
+      
+    
+	
+    </main>    
+    <img src="{% static "img/teamoangelim.jpg" %}" class="minha-foto" alt="Escudo da liga Te Amo Angelim">
+  <aside>
+    <nav>
+        <h1>CartolaFC<br>Te amo Angelim</h1>            
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre a Liga</a></li>
+            <li><a href="#">Vencedores</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+        <ul class="icones-sociais">
+            <li><a class="github" href="#">github</a></li>
+            <li><a class="twitter" href="#">twitter</a></li>
+            <li><a class="linkedin" href="#">linkedin</a></li>
+        </ul>
+    </aside>
+<footer class="rodape-pagina clearfix">&copy;jhmcnet 2015</footer>
+   
+</body>
+</html>
