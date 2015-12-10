@@ -1,0 +1,14 @@
+
+img{
+    width: 100%;
+}
+.projetos{
+    border: 8px solid #000000;
+    background-color: #FAFFFC;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 8px;
+    width: 320px;
+    float:right;
+    font-size: 15px;
+}
